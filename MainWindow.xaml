@@ -1,0 +1,82 @@
+﻿<Window x:Class="WPF_MVVM_Template.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_MVVM_Template"
+        xmlns:ViewModel="clr-namespace:WPF_MVVM_Template.MVVM.ViewModel"
+        mc:Ignorable="d"
+        Height="600" 
+        Width="920"
+        WindowStyle="SingleBorderWindow"
+        ResizeMode="CanMinimize"
+        Background="Transparent"
+        AllowsTransparency="False">
+
+    <Window.DataContext>
+        <ViewModel:MainViewModel/>
+    </Window.DataContext>
+    
+    <Border Background="#2F363D" CornerRadius="5">
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Laim"
+                       VerticalAlignment="Center"
+                       Foreground="White"
+                       FontSize="22"
+                       FontWeight="Bold"
+                       Margin="50,0,0,0"
+                       FontFamily="/Fonts/Roboto/#Roboto"/>
+
+            <StackPanel Grid.Row="1">
+
+                <RadioButton Content="Home"
+                             Height="50"
+                             Foreground="White"
+                             Style="{StaticResource LM_MenuButton}"
+                             IsChecked="True"
+                             Command="{Binding HomeViewCommand}"/>
+
+                <RadioButton Content="Games"
+                             Height="50"
+                             Foreground="White"
+                             Style="{StaticResource LM_MenuButton}"
+                             Command="{Binding GameViewCommand}"/>
+
+                <RadioButton Content="Profile"
+                             Height="50"
+                             Foreground="White"
+                             Style="{StaticResource LM_MenuButton}"
+                             Command="{Binding ProfileViewCommand}"/>
+
+                <RadioButton Content="About"
+                             Height="50"
+                             Foreground="White"
+                             Style="{StaticResource LM_MenuButton}"
+                             Command="{Binding AboutViewCommand}"/>
+
+            </StackPanel>
+
+            <TextBox Grid.Column="1"
+                     Style="{StaticResource LM_SearchBox}"/>
+
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10"
+                            Content="{Binding CurrentView}"/>
+
+        </Grid>
+    </Border>
+    
+    
+</Window>

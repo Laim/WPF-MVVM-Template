@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="WPF_MVVM_Template.MVVM.View.AboutView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF_MVVM_Template.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" 
+             d:DesignWidth="920">
+    <StackPanel>
+        <TextBlock Text="About"
+                   Foreground="#FFF"
+                   FontWeight="Bold"
+                   FontSize="32"
+                   HorizontalAlignment="Left"
+                   Margin="0,-7,0,20"
+                   FontFamily="/Fonts/Roboto/#Roboto"/>
+
+        <StackPanel>
+            <TextBlock Text="ApplicationName"
+                                   Foreground="#FFF"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   Margin="0,10,10,0"/>
+
+            <TextBlock Text="Version 1.0.0.0&#10;Copyright (c) Laim McKenzie"
+                                   Foreground="#FFF"
+                                   FontSize="18"
+                                   Margin="0,10,10,0"
+                                   TextWrapping="Wrap"/>
+        </StackPanel>
+    </StackPanel>
+
+
+</UserControl>

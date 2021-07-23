@@ -1,0 +1,36 @@
+﻿<Application x:Class="WPF_MVVM_Template.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WPF_MVVM_Template"
+             xmlns:ViewModel="clr-namespace:WPF_MVVM_Template.MVVM.ViewModel"
+             xmlns:View="clr-namespace:WPF_MVVM_Template.MVVM.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/LM_MenuButton.xaml"/>
+                <ResourceDictionary Source="Theme/LM_SearchBox.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type ViewModel:HomeViewModel}">
+                <View:HomeView/>
+            </DataTemplate>
+
+
+            <DataTemplate DataType="{x:Type ViewModel:GamesViewModel}">
+                <View:GamesView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type ViewModel:ProfileViewModel}">
+                <View:ProfileView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type ViewModel:AboutViewModel}">
+                <View:AboutView/>
+            </DataTemplate>
+            
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>
